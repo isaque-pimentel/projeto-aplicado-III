@@ -29,6 +29,16 @@ Desenvolver um sistema de recomendação de filmes históricos e documentários 
 
 
 ### Dependências
+Aqui está a tabela-resumo das bibliotecas utilizadas:
+
+|Biblioteca|Descrição|
+|:----|:----|
+|Pandas|Para manipulação de dados e execução de análises descritivas.|
+|NumPy|Para operações matemáticas e manipulação de arrays.|
+|SciPy|Para cálculos avançados e otimizações (usada para ajudar na normalização de dados).|
+|Surprise|Uma biblioteca dedicada para a construção e avaliação de sistemas de recomendação, excelente para filtragem colaborativa.|
+|scikit-learn|Para pré-processamento dos dados (normalização) e algumas métricas|
+|Matplotlib/Seaborn:|Para a visualização dos dados durante a análise exploratória|
 
 
 ### Apresentação do Projeto
@@ -38,4 +48,9 @@ A apresentação do projeto foi disponibilizada no YouTube. Clique nesse [link](
 ### Relatório Técnico do Projeto
 
 Ao final do projeto, um relatório técnico foi produzido e entregue para avaliação. Ele apresenta os elementos solicitados no início do projeto, como por exemplo, apresentação do produto e os resultados obtidos. Clique nesse [link]() para acessar a versão final do relatório.
+
+### Documentação do Projeto
+
+A descrição de cada pasta no repositório é dada a seguir:
+
 
