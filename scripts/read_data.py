@@ -8,7 +8,7 @@ Os filmes têm seus títulos e anos extraídos e organizados, as avaliações do
 usuários são estruturadas,
 e as informações de perfil dos usuários são carregadas.
 Em seguida, os dados são combinados em um único DataFrame, unindo as
-avaliações, filmes e usuários. 
+avaliações, filmes e usuários.
 O resultado é salvo em um arquivo parquet para futuras análises.
 
 """
@@ -33,7 +33,9 @@ def load_movies(filepath: str) -> pd.DataFrame:
     movies_df["Year"] = movies_df["Title"].str.extract(r"\((\d{4})\)", expand=False)
 
     # Remove o ano do título
-    movies_df["Title"] = movies_df["Title"].str.replace(r"\(\d{4}\)", "").str.strip()
+    movies_df["Title"] = (
+        movies_df["Title"].str.replace(r"\(\d{4}\)", "", regex=True).str.strip()
+    )
 
     return movies_df
 
@@ -48,6 +50,8 @@ def load_ratings(filepath: str) -> pd.DataFrame:
 
     # Carrega o arquivo, separando as colunas por "::"
     ratings_df = pd.read_csv(filepath, sep="::", engine="python", names=ratings_cols)
+
+    # ratings_df["Timestamp"] = pd.to_datetime(ratings_df["Timestamp"], unit="s")
 
     return ratings_df
 
@@ -109,9 +113,14 @@ def main() -> None:
 
     # Exibi uma parte da base agregada
     print(full_df.head())
+    # full_df.head().to_csv("./dataset/movielens_head_data.csv", index=False)
+
+    # print(full_df.tail())
+    # full_df.tail().to_csv("./dataset/movielens_tail_data.csv", index=False)
 
     # Salva o DataFrame no formato parquet para leitura mais eficiente
     full_df.to_parquet("./dataset/movielens_full_data.parquet", index=False)
+    print("Base agregada foi salva!")
 
     # Carrega o DataFrame salvo no formato parquet
     # full_df = pd.read_parquet(".dataset/movielens_full_data.parquet")
