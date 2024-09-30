@@ -38,7 +38,7 @@ Aqui está a tabela-resumo das bibliotecas utilizadas:
 |SciPy|Para cálculos avançados e otimizações (usada para ajudar na normalização de dados).|
 |Surprise|Uma biblioteca dedicada para a construção e avaliação de sistemas de recomendação, excelente para filtragem colaborativa.|
 |scikit-learn|Para pré-processamento dos dados (normalização) e algumas métricas|
-|Matplotlib/Seaborn:|Para a visualização dos dados durante a análise exploratória|
+|Matplotlib/Seaborn|Para a visualização dos dados durante a análise exploratória|
 
 
 ### Apresentação do Projeto
